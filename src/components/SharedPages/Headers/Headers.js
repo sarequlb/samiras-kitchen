@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Headers = () => {
 
     const navItem = <>
-        <Link className='mx-4  lg:font-semi-bold'>Home</Link>
-        <Link className='mx-4  lg:font-semi-bold'>My Reviews</Link>
-        <Link className='mx-4  lg:font-semi-bold'>Add Service</Link>
+        <Link to={'/'} className='mx-4  lg:font-semi-bold'>Home</Link>
+        <Link to={'/reviews'} className='mx-4  lg:font-semi-bold'>My Reviews</Link>
+        <Link to={'/addService'} className='mx-4  lg:font-semi-bold'>Add Service</Link>
     </>
     return (
         <div className="navbar bg-slate-900 text-white py-7">
@@ -31,7 +31,7 @@ const Headers = () => {
             <div className="navbar-end lg:mx-10">
                 <button className="btn btn-ghost btn-circle">
                     <div className="indicator">
-                        <button><Link>Sign in</Link></button>
+                        <button className='btn btn-accent'><Link to={'/signIn'}>Sign in</Link></button>
                     </div>
                 </button>
             </div>
