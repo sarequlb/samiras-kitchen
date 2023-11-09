@@ -1,8 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Homes from "../../components/Pages/Homes/Homes";
 import Main from "../../Layout/Main/Main";
 import SignIn from "../../components/Pages/SignIn/SignIn";
 import SignUp from "../../components/Pages/SignUp/SignUp";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import AddFoods from "../../components/Pages/AddFoods/AddFoods";
+import MyReviews from "../../components/Pages/MyReviews/MyReviews";
+import Homes from "../../components/Pages/Homes/Homes";
+import AllFoods from "../../components/Pages/AllFoods/AllFoods";
+import FoodDetails from "../../components/Pages/Fooddetails/FoodDetails";
 
 const router =  createBrowserRouter([
     {
@@ -11,6 +16,7 @@ const router =  createBrowserRouter([
         children:[
             {
                 path:'/',
+                loader:() =>fetch('http://localhost:5000/foods'),
                 element:<Homes></Homes>
             },
             {
@@ -20,6 +26,24 @@ const router =  createBrowserRouter([
             {
                 path:'/signUp',
                 element:<SignUp></SignUp>
+            },
+            {
+                path:'/addFoods',
+                element:<PrivateRoutes><AddFoods></AddFoods></PrivateRoutes>
+            },
+            {
+                path:'/reviews',
+                element:<PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>
+            },
+            {
+                path:'/allFoods',
+                loader:() =>fetch('http://localhost:5000/foods'),
+                element:<AllFoods></AllFoods>
+            },
+            {
+                path:'/food/:id',
+                loader: ({params}) =>  fetch(`http://localhost:5000/foods/${params.id}`),
+                element:<FoodDetails></FoodDetails>
             }
         ]
     }

@@ -1,12 +1,34 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/KitchenContexts';
+import { FaSignOutAlt, FaUser } from 'react-icons/fa';
 
 const Headers = () => {
 
+    const { user, logOut } = useContext(AuthContext)
+
     const navItem = <>
+
         <Link to={'/'} className='mx-4  lg:font-semi-bold'>Home</Link>
-        <Link to={'/reviews'} className='mx-4  lg:font-semi-bold'>My Reviews</Link>
-        <Link to={'/addService'} className='mx-4  lg:font-semi-bold'>Add Service</Link>
+
+        {
+            user?.email ? <>
+                <Link to={'/reviews'} className='mx-4  lg:font-semi-bold'>My Reviews</Link>
+                <Link to={'/addFoods'} className='mx-4  lg:font-semi-bold'>Add Foods</Link>
+            </> : <></>
+        }
     </>
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     return (
         <div className="navbar bg-slate-900 text-white py-7">
             <div className="navbar-start lg:hidden">
@@ -28,11 +50,23 @@ const Headers = () => {
                 </div>
             </div>
             <div className="navbar-end lg:mx-10">
-                <button className="btn btn-ghost btn-circle">
-                    <div className="indicator">
-                        <button className='btn btn-accent'><Link to={'/signIn'}>Sign in</Link></button>
-                    </div>
-                </button>
+                <div className="indicator">
+                    {
+                        user?.email ? <>
+                            {
+                                user?.photoURL? <div className="avatar">
+                                    <div className=" w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                        <img alt='' src={user?.photoURL} />
+                                    </div>
+                                </div> : <FaUser></FaUser>
+                            }
+
+                            <button onClick={handleLogOut} className='mx-5'><FaSignOutAlt></FaSignOutAlt></button>
+                        </> : <Link className='btn btn-accent' to={'/signIn'}>Sign In</Link>
+                    }
+
+
+                </div>
             </div>
         </div>
     );

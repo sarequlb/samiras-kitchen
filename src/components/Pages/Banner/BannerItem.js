@@ -2,7 +2,6 @@ import React from 'react';
 import './Banner.css'
 const BannerItem = ({ slide }) => {
     const { image, next, prev, id } = slide;
-    console.log(slide)
     return (
         <div id={`slide${id}`} className="carousel-item relative w-full">
             <div className='carousel-img'>
