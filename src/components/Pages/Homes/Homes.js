@@ -4,6 +4,7 @@ import AboutMyFood from '../AboutMyFood/AboutMyFood'
 import Discount from '../Discount/Discount'
 import { useLoaderData } from 'react-router-dom';
 import PopularFoods from '../PopularFoods/PopularFoods';
+import CustomerReviews from '../CustomerReviews/CustomerReviews';
 
 const Homes = () => {
     const foods = useLoaderData()
@@ -13,6 +14,7 @@ const Homes = () => {
             <AboutMyFood></AboutMyFood>
             <PopularFoods foods={foods}></PopularFoods>
             <Discount></Discount>
+            <CustomerReviews></CustomerReviews>
         </div>
     );
 };

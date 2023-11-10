@@ -8,7 +8,6 @@ import MyReviews from "../../components/Pages/MyReviews/MyReviews";
 import Homes from "../../components/Pages/Homes/Homes";
 import AllFoods from "../../components/Pages/AllFoods/AllFoods";
 import FoodDetails from "../../components/Pages/Fooddetails/FoodDetails";
-
 const router =  createBrowserRouter([
     {
         path:'/',
@@ -16,7 +15,7 @@ const router =  createBrowserRouter([
         children:[
             {
                 path:'/',
-                loader:() =>fetch('http://localhost:5000/foods'),
+                loader:() =>fetch('http://localhost:5000/limitFoods'),
                 element:<Homes></Homes>
             },
             {
@@ -43,7 +42,7 @@ const router =  createBrowserRouter([
             {
                 path:'/food/:id',
                 loader: ({params}) =>  fetch(`http://localhost:5000/foods/${params.id}`),
-                element:<FoodDetails></FoodDetails>
+                element:<PrivateRoutes><FoodDetails></FoodDetails></PrivateRoutes>
             }
         ]
     }

@@ -39,10 +39,11 @@ const SignUp = () => {
         setError('')
         createUser(email, password)
             .then(result => {
-                const user = result.user;
+                const user = result.user; 
                 handleUpdate(fullName)
                 setSuccess(true)
-                console.log(user)
+                navigate(from ,{replace:true})
+                
             })
             .catch(error => {
                 setError(error.message)

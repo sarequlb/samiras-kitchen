@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/KitchenContexts';
 import { FaSignOutAlt, FaUser } from 'react-icons/fa';
@@ -54,11 +54,16 @@ const Headers = () => {
                     {
                         user?.email ? <>
                             {
-                                user?.photoURL? <div className="avatar">
+                                user?.photoURL ? <div className="avatar">
                                     <div className=" w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                         <img alt='' src={user?.photoURL} />
                                     </div>
-                                </div> : <FaUser></FaUser>
+                                </div> : <div className="avatar placeholder">
+                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-10">
+                                        {/* <span className="text-xl">{user?.displayName[0]}</span> */}
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdDpdr_mrgjGDzhXSR7V3h0Ef8P0oUcI6S5Q&usqp=CAU" alt="" />
+                                    </div>
+                                </div>
                             }
 
                             <button onClick={handleLogOut} className='mx-5'><FaSignOutAlt></FaSignOutAlt></button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Banner.css'
+import { Link } from 'react-router-dom';
 const BannerItem = ({ slide }) => {
     const { image, next, prev, id } = slide;
     return (
@@ -18,7 +19,7 @@ const BannerItem = ({ slide }) => {
                 <p className='lg:text-2xl font-bold'>Tasty & <span className='text-pink-600'>Delicious</span>  Foods</p>
             </div>
             <div className='absolute flex justify-center transform -translate-y-1/2 left-24 top-2/3 lg:w-2/5 bottom-56 lg:bottom-28'>
-                <button className="btn btn-outline btn-secondary">Check Foods</button>
+                <Link to={'/allFoods'}><button className="btn btn-outline btn-secondary">Check Foods</button></Link>
             </div>
         </div>
     );
