@@ -8,6 +8,8 @@ import MyReviews from "../../components/Pages/MyReviews/MyReviews";
 import Homes from "../../components/Pages/Homes/Homes";
 import AllFoods from "../../components/Pages/AllFoods/AllFoods";
 import FoodDetails from "../../components/Pages/Fooddetails/FoodDetails";
+import UpdateReview from "../../components/Pages/UpdateReview/UpdateReview";
+import AllReviews from "../../components/Pages/AllReviews/AllReviews";
 const router =  createBrowserRouter([
     {
         path:'/',
@@ -43,6 +45,16 @@ const router =  createBrowserRouter([
                 path:'/food/:id',
                 loader: ({params}) =>  fetch(`http://localhost:5000/foods/${params.id}`),
                 element:<PrivateRoutes><FoodDetails></FoodDetails></PrivateRoutes>
+            },
+            {
+                path:'/reviews/:id',
+                loader: ({params}) =>  fetch(`http://localhost:5000/reviews/${params.id}`),
+                element:<UpdateReview></UpdateReview>
+            },
+            {
+                path:'/allReviews',
+                loader: () =>  fetch('http://localhost:5000/reviews'),
+                element:<AllReviews></AllReviews>
             }
         ]
     }

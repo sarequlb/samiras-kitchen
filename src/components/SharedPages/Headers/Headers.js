@@ -59,9 +59,8 @@ const Headers = () => {
                                         <img alt='' src={user?.photoURL} />
                                     </div>
                                 </div> : <div className="avatar placeholder">
-                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-10">
-                                        {/* <span className="text-xl">{user?.displayName[0]}</span> */}
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdDpdr_mrgjGDzhXSR7V3h0Ef8P0oUcI6S5Q&usqp=CAU" alt="" />
+                                    <div className="bg-red-500 text-neutral-content rounded-full w-10">
+                                        <span className="text-1xl">{user.displayName[0]}</span>
                                     </div>
                                 </div>
                             }

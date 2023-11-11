@@ -1,6 +1,7 @@
 import React from 'react';
 import { FcRating } from 'react-icons/fc';
 import { FiEdit } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const MyReview = ({ review,handleDelete }) => {
     const { _id, about, foodImage, rating, title } = review;
@@ -38,7 +39,7 @@ const MyReview = ({ review,handleDelete }) => {
                 </div>
             </td>
             <th>
-                <button onClick={'() => handleUpdate(_id)'} className="btn btn-ghost btn-xs"><FiEdit></FiEdit></button>
+                <Link to={`/reviews/${_id}`}><FiEdit></FiEdit></Link>
             </th>
         </tr>
     );
