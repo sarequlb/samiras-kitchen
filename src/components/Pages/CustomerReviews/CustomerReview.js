@@ -4,6 +4,7 @@ import { FcRating } from 'react-icons/fc';
 
 const CustomerReview = ({ review }) => {
     const { user } = useContext(AuthContext)
+    console.log(review)
     return (
         <div className='my-20'>
 
@@ -18,22 +19,18 @@ const CustomerReview = ({ review }) => {
                         <div className='flex gap-3 '>
                             <div>
                                 {
-                                    user?.photoURL ? <figure><img className='w-10 rounded-full' src={user?.photoURL} alt="Movie" /></figure> :
+                                    review?.photo ? <figure><img className='w-10 rounded-full' src={user?.photoURL} alt="Movie" /></figure> :
                                         <>
                                             <div className="avatar placeholder">
                                                 <div className="bg-neutral-focus text-neutral-content rounded-full w-8">
-                                                    {
-                                                        user && <span className="text-1xl">{user.displayName[0]}</span>
-                                                    }
+                                                    <span className="text-1xl">{review.name[0]}</span>
                                                 </div>
                                             </div>
                                         </>
                                 }
                             </div>
                             <div>
-                                {
-                                    user && <h1>{user?.displayName}</h1>
-                                }
+                                <h1>{review.name}</h1>
                             </div>
                         </div>
                         <div className="card-actions justify-end  items-center">

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CustomerReviews = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://samiras-kitchen-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data.slice(0, 3)))
     }, [])

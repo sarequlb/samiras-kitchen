@@ -25,7 +25,7 @@ const AddFoods = () => {
             details:details
         }
 
-        fetch('http://localhost:5000/foods',{
+        fetch('https://samiras-kitchen-server.vercel.app/foods',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'
