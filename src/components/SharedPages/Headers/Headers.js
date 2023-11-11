@@ -1,8 +1,7 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/KitchenContexts';
-import { FaSignOutAlt } from 'react-icons/fa';
-import kitchenLogo from '../../../assets/kitchenLogo.jpg'
+import { FaSignOutAlt, FaUser } from 'react-icons/fa';
 
 const Headers = () => {
 
@@ -43,7 +42,7 @@ const Headers = () => {
                 </div>
             </div>
             <div className="lg:navbar-start lg:mx-10">
-                <img className='w-1/4' src={kitchenLogo} alt="" />
+                <h1 className="btn btn-ghost normal-case text-2xl font-bold">Samira's Kitchen</h1>
             </div>
             <div className="lg:navbar-center hidden lg:flex">
                 <div className='mx-5'>
