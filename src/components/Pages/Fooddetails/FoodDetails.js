@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FcRating } from 'react-icons/fc';
 import { AuthContext } from '../../../Contexts/KitchenContexts';
+import useTitle from '../../../hooks/UseTitle';
 
 const FoodDetails = () => {
+    useTitle('Food Details')
     const { user } = useContext(AuthContext)
     console.log(user.email)
     const foodDetails = useLoaderData()

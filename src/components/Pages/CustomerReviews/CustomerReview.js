@@ -22,14 +22,18 @@ const CustomerReview = ({ review }) => {
                                         <>
                                             <div className="avatar placeholder">
                                                 <div className="bg-neutral-focus text-neutral-content rounded-full w-8">
-                                                    <span className="text-1xl">{user.displayName[0]}</span>
+                                                    {
+                                                        user && <span className="text-1xl">{user.displayName[0]}</span>
+                                                    }
                                                 </div>
                                             </div>
                                         </>
                                 }
                             </div>
                             <div>
-                                {user?.displayName}
+                                {
+                                    user && <h1>{user?.displayName}</h1>
+                                }
                             </div>
                         </div>
                         <div className="card-actions justify-end  items-center">

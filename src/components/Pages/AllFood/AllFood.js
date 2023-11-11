@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../../hooks/UseTitle';
 
 
 const AllFood = ({ food }) => {
     const { details, foodImage, foodName, _id } = food;
+    useTitle('All Foods')
     return (
         <div className="card w-2/3 bg-base-100 shadow-xl">
             <figure>

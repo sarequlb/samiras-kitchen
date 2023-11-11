@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CustomerReview from '../CustomerReviews/CustomerReview';
+import useTitle from '../../../hooks/UseTitle';
 
 const AllReviews = () => {
     const reviews = useLoaderData()
+    useTitle('All Reviews')
     // console.log(allReviews)
     return (
         <div className='mb-96'>

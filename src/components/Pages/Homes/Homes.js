@@ -5,8 +5,10 @@ import Discount from '../Discount/Discount'
 import { useLoaderData } from 'react-router-dom';
 import PopularFoods from '../PopularFoods/PopularFoods';
 import CustomerReviews from '../CustomerReviews/CustomerReviews';
+import useTitle from '../../../hooks/UseTitle';
 
 const Homes = () => {
+    useTitle(' ')
     const foods = useLoaderData()
     return (
         <div>

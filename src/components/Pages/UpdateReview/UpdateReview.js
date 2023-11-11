@@ -1,7 +1,9 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../../hooks/UseTitle';
 
 const UpdateReview = () => {
+    useTitle('Update Reviews')
     const StoredReview = useLoaderData()
     const {about,rating,email,_id} = StoredReview;
     const handleInputChange =(event) =>{

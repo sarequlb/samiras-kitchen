@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import useTitle from '../../../hooks/UseTitle';
 
 const AddFoods = () => {
     const [error,setError] = useState(null)
+    useTitle('Add Foods')
     const handleAddProduct = (event) =>{
         event.preventDefault()
         const form = event.target;
