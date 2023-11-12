@@ -17,7 +17,7 @@ const router =  createBrowserRouter([
         children:[
             {
                 path:'/',
-                loader:() =>fetch('https://samiras-kitchen-server.vercel.app/limitFoods'),
+                loader:() =>fetch('http://localhost:5000/limitFoods'),
                 element:<Homes></Homes>
             },
             {
@@ -38,22 +38,22 @@ const router =  createBrowserRouter([
             },
             {
                 path:'/allFoods',
-                loader:() =>fetch('https://samiras-kitchen-server.vercel.app/foods'),
+                loader:() =>fetch('http://localhost:5000/foods'),
                 element:<PrivateRoutes><AllFoods></AllFoods></PrivateRoutes>
             },
             {
                 path:'/food/:id',
-                loader: ({params}) =>  fetch(`https://samiras-kitchen-server.vercel.app/foods/${params.id}`),
+                loader: ({params}) =>  fetch(`http://localhost:5000/foods/${params.id}`),
                 element:<PrivateRoutes><FoodDetails></FoodDetails></PrivateRoutes>
             },
             {
                 path:'/reviews/:id',
-                loader: ({params}) =>  fetch(`https://samiras-kitchen-server.vercel.app/reviews/${params.id}`),
+                loader: ({params}) =>  fetch(`http://localhost:5000/reviews/${params.id}`),
                 element:<PrivateRoutes><UpdateReview></UpdateReview></PrivateRoutes>
             },
             {
                 path:'/allReviews',
-                loader: () =>  fetch('https://samiras-kitchen-server.vercel.app/reviews'),
+                loader: () =>  fetch('http://localhost:5000/reviews'),
                 element:<PrivateRoutes><AllReviews></AllReviews></PrivateRoutes>
             }
         ]

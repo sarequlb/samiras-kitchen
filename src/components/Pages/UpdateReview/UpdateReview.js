@@ -16,7 +16,7 @@ const UpdateReview = () => {
             rating
         }
         console.log(newReview)
-        fetch(`https://samiras-kitchen-server.vercel.app/reviews/${_id}`,{
+        fetch(`http://localhost:5000/reviews/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type': 'application/json'

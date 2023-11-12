@@ -21,11 +21,12 @@ const CustomerReview = ({ review }) => {
                                 {
                                     review?.photo ? <figure><img className='w-10 rounded-full' src={user?.photoURL} alt="Movie" /></figure> :
                                         <>
-                                            <div className="avatar placeholder">
-                                                <div className="bg-neutral-focus text-neutral-content rounded-full w-8">
-                                                    <span className="text-1xl">{review.name[0]}</span>
+                                                <div>
+                                                    <img className='w-10 rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRMVVzolQkwL4kK9HJ9tQBKr6SdnkX882mMy8ZXZeiCQkMvQw6iB7YqeTKTd6AabKs11E&usqp=CAU" alt="" />
                                                 </div>
-                                            </div>
+                                                {/* <div className="bg-neutral-focus text-neutral-content rounded-full w-8">
+                                                    <span className="text-1xl">{review.name[0]}</span>
+                                                </div> */}
                                         </>
                                 }
                             </div>

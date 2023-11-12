@@ -22,7 +22,23 @@ const SignIn = () => {
         logIn(email, passWord)
             .then(result => {
                 const user = result.user;
-                navigate(from ,{replace:true})
+
+                const currentUser = {
+                    email:user.email
+                }
+                // get jwt
+                fetch('http://localhost:5000/jwt',{
+                    method:'POST',
+                    headers:{
+                        'content-type': 'application/json'
+                    },
+                    body:JSON.stringify(currentUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    navigate(from ,{replace:true})
+                })
+                
                 console.log(user)
             })
             .catch(error => {

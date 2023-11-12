@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/KitchenContexts';
 import { FaSignOutAlt, FaUser } from 'react-icons/fa';
+import kitChenLogo from '../../../assets/kitchenLogo.jpg'
 
 const Headers = () => {
 
@@ -41,8 +42,8 @@ const Headers = () => {
                     </ul>
                 </div>
             </div>
-            <div className="lg:navbar-start lg:mx-10">
-                <h1 className="btn btn-ghost normal-case text-2xl font-bold">Samira's Kitchen</h1>
+            <div className="lg:navbar-start lg:mx-10 ">
+               <img className='w-40' src={kitChenLogo} alt="" />
             </div>
             <div className="lg:navbar-center hidden lg:flex">
                 <div className='mx-5'>
@@ -58,11 +59,14 @@ const Headers = () => {
                                     <div className=" w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                         <img alt='' src={user?.photoURL} />
                                     </div>
-                                </div> : <div className="avatar placeholder">
-                                    <div className="bg-red-500 text-neutral-content rounded-full w-10">
-                                        <span className="text-1xl">{user.displayName[0]}</span>
-                                    </div>
+                                </div> : <div>
+                                    <img className='w-10 rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRMVVzolQkwL4kK9HJ9tQBKr6SdnkX882mMy8ZXZeiCQkMvQw6iB7YqeTKTd6AabKs11E&usqp=CAU" alt="" />
                                 </div>
+                                // <div className="avatar placeholder">
+                                //     <div className="bg-red-500 text-neutral-content rounded-full w-10">
+                                //         <span className="text-1xl">{user?.displayName[0]}</span>
+                                //     </div>
+                                // </div>
                             }
 
                             <button onClick={handleLogOut} className='mx-5'><FaSignOutAlt></FaSignOutAlt></button>
